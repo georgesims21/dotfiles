@@ -3,16 +3,17 @@
 # ----- Mod key ----- #
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
+set $mod Mod4
 
 # ----- Display ----- #
 
 
 # Set wallpaper
-#output "*" bg "$HOME/Pictures/wallpapers/san-francisco-4k-wallpaper.jpg" fill
+output "*" bg "$HOME/Pictures/wallpapers/Night_City.png" fill
 
 # ----- Autostart ----- #
 
+exec_always --no-startup-id kanshi
 # autohide mouse cursor
 #exec --no-startup-id unclutter -idle 1 -jitter 2
 
@@ -114,7 +115,7 @@ set $terminal 'alacritty'
 
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e tmux
-# bindsym $mod+d exec --no-startup-id wofi -show run
+bindsym $mod+d exec --no-startup-id wofi -show run
 bindsym $mod+w exec --no-startup-id google-chrome-stable
 bindsym $mod+r exec --no-startup-id $terminal -e ranger
 # bindsym $mod+o exec --no-startup-id zathura
@@ -285,7 +286,7 @@ input type:keyboard {
   # Set keyboard delay rate
   repeat_delay 250
   repeat_rate 25
-  xkb_options caps:swapescape
+  xkb_options caps:swapescape,compose:ralt
 }
 
 # ----- Idle ----- #
@@ -303,6 +304,6 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Output screens for home: [laptop | 4k | 1080p (90* rotation)]
-# output eDP-1 pos 0,0 scale 1.2
-# output DP-1 mode --custom 3840x2160@30Hz pos 1600,0 scale 1.5
+#output eDP-1 disable
+#output DP-2 mode --custom 3840x2160@30Hz pos 1600,0 scale 1.2
 # output DP-2 scale 1 transform 90

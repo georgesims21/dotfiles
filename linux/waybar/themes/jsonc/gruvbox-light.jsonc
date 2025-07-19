@@ -13,11 +13,11 @@
     "custom/theme",         // theme switcher
     "custom/left1",
 
-    "sway/workspaces",  // workspaces
+    "hyprland/workspaces",  // workspaces
     "custom/right1",
 
     "custom/paddw",
-    "sway/window"       // window title
+    "hyprland/window"       // window title
   ],
 
   "modules-center": [
@@ -79,38 +79,21 @@
 
   // ─────────────────────────────────────────────────────────┤ workspaces ├───
 
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "format": "{icon}",
-    "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "urgent": "",
-        "focused": "",
-        "default": "",
-        "high-priority-named": ["1", "2"]
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
     }
   },
 
-  // "hyprland/workspaces": {
-  //   "on-scroll-up": "hyprctl dispatch workspace -1",
-  //   "on-scroll-down": "hyprctl dispatch workspace +1",
-  //   "persistent-workspaces": {
-  //     "1": [],
-  //     "2": [],
-  //     "3": [],
-  //     "4": [],
-  //     "5": []
-  //   }
-  // },
-
   // ─────────────────────────────────────────────────────────────┤ window ├───
 
-  "sway/window": {
+  "hyprland/window": {
     "swap-icon-label": false,
     "format": "{}",
     "tooltip": false,
@@ -167,7 +150,7 @@
         "<span foreground='#98971a'> </span> Spotify Premium",
 
       "OBS(.*)": 
-        "<span foreground='#d5c4a1'>󰻃 </span> OBS Studio",
+        "<span foreground='#504945'>󰻃 </span> OBS Studio",
 
       "VLC media player": 
         "<span foreground='#d65d0e'>󰕼 </span> VLC Media Player",
@@ -296,7 +279,7 @@
         "months": 
           "<span color='#928374'><b>{}</b></span>",
         "weekdays": 
-          "<span color='#d5c4a1' font='7'>{}</span>",
+          "<span color='#504945' font='7'>{}</span>",
         "today": 
           "<span color='#cc241d'><b>{}</b></span>"
       }
