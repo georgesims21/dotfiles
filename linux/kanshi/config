@@ -1,0 +1,29 @@
+output "AU Optronics 0x5B2D Unknown" {
+    scale 1.0
+    mode 1920x1080
+    position 0,0
+    alias $LAPTOP
+}
+
+output "Dell Inc. DELL S2721QSA 5PNKZY3" {
+    scale 1.0
+    mode 3840x2160 
+    position 0,0
+    alias $DELL
+}
+
+# This profile matches ONLY when the laptop display is the only connected display
+profile laptop_only {
+    output $LAPTOP enable
+}
+
+# This profile matches ONLY when both the laptop and Dell displays are connected
+profile external {
+    output $LAPTOP disable
+    output $DELL enable
+}
+
+# This profile matches ONLY when the Dell display is the only connected display
+profile external_only {
+    output $DELL enable
+}

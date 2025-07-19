@@ -13,6 +13,7 @@ output "*" bg "$HOME/Pictures/wallpapers/Night_City.png" fill
 
 # ----- Autostart ----- #
 
+exec_always --no-startup-id kanshi
 # autohide mouse cursor
 #exec --no-startup-id unclutter -idle 1 -jitter 2
 
@@ -285,7 +286,7 @@ input type:keyboard {
   # Set keyboard delay rate
   repeat_delay 250
   repeat_rate 25
-  xkb_options caps:swapescape
+  xkb_options caps:swapescape,compose:ralt
 }
 
 # ----- Idle ----- #
@@ -303,6 +304,6 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Output screens for home: [laptop | 4k | 1080p (90* rotation)]
-# output eDP-1 pos 0,0 scale 1.2
-# output DP-1 mode --custom 3840x2160@30Hz pos 1600,0 scale 1.5
+#output eDP-1 disable
+#output DP-2 mode --custom 3840x2160@30Hz pos 1600,0 scale 1.2
 # output DP-2 scale 1 transform 90
